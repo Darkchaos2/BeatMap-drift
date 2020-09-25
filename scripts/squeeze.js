@@ -1,4 +1,5 @@
 function squeeze() {
+	console.log("Generating Squeeze");
 	input = [
 		{
 			"_time": 569,
@@ -128,7 +129,6 @@ function squeeze() {
 		}
 	]
 
-
 	force = 0.75;
 	maxDisp = -0.5;
 	center = [1.5, 1]
@@ -144,8 +144,8 @@ function squeeze() {
 	input.forEach(note => {
 		x = (center[0] - note._lineIndex) * maxDisp;
 		y = (center[1] - note._lineLayer) * maxDisp;
-		console.log(`[${note._lineIndex}, ${note._lineLayer}]`);
-		console.log(`[${x}, ${y}]`);
+		// console.log(`[${note._lineIndex}, ${note._lineLayer}]`);
+		// console.log(`[${x}, ${y}]`);
 
 		rumbleDisp = []
 
@@ -153,7 +153,6 @@ function squeeze() {
 			localRumble = Math.random(-1, 1) * force;
 
 			rumbleDisp.push([(x * localRumble) + x, (y * localRumble) + y, 0, startMoveEnd + i * (endMoveStart - startMoveEnd)])
-			// console.log(rumbleDisp[rumbleDisp.length - 1]);
 		}
 
 		output.push({
@@ -178,13 +177,8 @@ function squeeze() {
 		})
 	})
 
-	// const fs = require('fs');
-	// fs.writeFile('squeeze.dat', JSON.stringify(output), 'utf8', smt => console.log(smt));
+	console.log("Squeeeeeze compeeeeeete");
 	return output;
 }
-
-test = "hi"
-
-exports.test = test
 
 exports.squeeze = squeeze

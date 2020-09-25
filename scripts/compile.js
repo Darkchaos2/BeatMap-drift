@@ -1,4 +1,5 @@
 function compile(beatMap, custom) {
+	console.log("Beginning compile");
 	// Add Points
 	beatMap._customData._pointDefinitions = custom._pointDefinitions;
 
@@ -70,6 +71,7 @@ function compile(beatMap, custom) {
 		});
 	});
 
+	console.log("Finsihed Compiling");
 	return beatMap;
 }
 

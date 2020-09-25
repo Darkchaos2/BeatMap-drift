@@ -2,8 +2,6 @@ const fs = require('fs');
 var c = require("./compile.js")
 var s = require("./scripts/squeeze.js")
 
-console.log(test);
-
 var mapTemplate = JSON.parse(fs.readFileSync('EasyStandard.dat', 'utf8'));
 var customEvents = require('./noodle.js').noodle;
 
