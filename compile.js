@@ -1,9 +1,3 @@
-const fs = require('fs');
-
-var mapTemplate = JSON.parse(fs.readFileSync('EasyStandard.dat', 'utf8'));
-var customEvents = require('./noodle.js').noodle;
-
-
 function compile(beatMap, custom) {
 	// Add Points
 	beatMap._customData._pointDefinitions = custom._pointDefinitions;
@@ -31,8 +25,18 @@ function compile(beatMap, custom) {
 		eventEntry._applyToStart.forEach(function(time, index) {
 			// assign event to notes
 			beatMap._notes.forEach(note => {
-				if(note._time > event._applyToStart[index] && note._time < event._applyToEnd[index]) {
-					console.log(this._data._track);
+				if(note._time >= event._applyToStart[index] && note._time < event._applyToEnd[index]) {
+					if(event._lineIndex) {
+						if(note._lineIndex != event._lineIndex[index])
+							return
+					}
+
+					if(event._lineLayer) {
+						if(note._lineLayer != event._lineLayer[index])
+							return
+					}
+
+					console.log(`Adding ${this._data._track} to ${event._time[index]}`);
 					note._customData = {};
 					note._customData._track = this._data._track;
 				}
@@ -45,7 +49,15 @@ function compile(beatMap, custom) {
 	custom._customNotes.forEach(noteEntry => {
 		noteEntry._applyToStart.forEach((startTime, index) => {
 			beatMap._notes.forEach(function(note) {
-				if(note._time > noteEntry._applyToStart[index] && note._time < noteEntry._applyToEnd[index]) {
+				if(note._time >= noteEntry._applyToStart[index] && note._time < noteEntry._applyToEnd[index]) {
+					if(noteEntry._lineIndex)
+						if(note._lineIndex[index] != noteEntry._lineIndex[index])
+							return
+
+					if(noteEntry._lineLayer)
+						if(note._lineLayer[index] != noteEntry._lineLayer[index])
+							return
+
 					if(!note._customData)
 						note._customData = {};
 
@@ -61,6 +73,4 @@ function compile(beatMap, custom) {
 	return beatMap;
 }
 
-output = compile(mapTemplate, customEvents)
-
-fs.writeFile('ExpertPlusStandard.dat', JSON.stringify(output), 'utf8', smt => console.log(smt));
+exports.compile = compile;

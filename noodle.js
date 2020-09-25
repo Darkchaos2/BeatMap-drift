@@ -1486,9 +1486,9 @@ noodle = {
 	"_customEvents": [
 		// Zoom
 		{
-			"_applyToStart": [/*586, */594,/*600,*/ 610/*, */, 626],
-			"_applyToEnd": [/*588, */596,/*601,*/ 612/*, */, 628],
-			"_time": [/*584.29498291015625, */591.29498291015625, /*599.29498291015625,*/607.29498291015625, /*,*/ 623.29498291015625],
+			"_applyToStart": [/*587, */595,/*600,*/ 611/*, */, 627],
+			"_applyToEnd": [/*589, */596,/*601,*/ 613/*, */, 629],
+			"_time": [/*584, */592, /*599,*/608, /*,*/ 624],
 			"_type": "AssignPathAnimation",
 			"_data": {
 				"_position": "zoomPathPos",
@@ -1498,9 +1498,9 @@ noodle = {
 			}
 		},
 		{
-			"_applyToStart": [586, 594, 602, 610, 618, 626],
-			"_applyToEnd": [588, 596, 604, 612, 620, 628],
-			"_time": [584.29498291015625, 592.29498291015625, 600.29498291015625, 608.29498291015625, 616.29498291015625, 616.794983, 624.29498291015625],
+			"_applyToStart": [587, 595, 603, 611, 619, 627],
+			"_applyToEnd": [589, 597, 605, 613, 621, 629],
+			"_time": [585, 593, 601, 609, 617, 625],
 			"_type": "AssignPathAnimation",
 			"_data": {
 				"_position": [
@@ -1524,9 +1524,9 @@ noodle = {
 		},
 		// Wobble
 		{
-			"_applyToStart": [586, 594, 602, 610, 618, 626],
-			"_applyToEnd": [588, 596, 604, 612, 620, 628],
-			"_time": [584.29498291015625, 592.29498291015625, 600.29498291015625, 608.29498291015625, 616.29498291015625, 624.29498291015625],
+			"_applyToStart": [587, 595, 603, 611, 619, 627],
+			"_applyToEnd": [589, 597, 605, 613, 621, 629],
+			"_time": [585, 593, 601, 609, 617, 625],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_position": [
@@ -1684,9 +1684,9 @@ noodle = {
 		},
 		// Strech
 		{
-			"_applyToStart": [586, 594, 602, 610, 618, 626],
-			"_applyToEnd": [588, 596, 604, 612, 620, 628],
-			"_time": [584.794983, 592.794983, 600.794983, 608.794983, 616.794983, 624.794983],
+			"_applyToStart": [587, 595, 603, 611, 619, 627],
+			"_applyToEnd": [589, 597, 605, 613, 621, 629],
+			"_time": [585.5, 593.5, 601.5, 609.5, 617.5, 625.5],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_track": "zoomWobble",
@@ -1696,32 +1696,32 @@ noodle = {
 		},
 		// Rumble
 		{
-			"_applyToStart": [640],
-			"_applyToEnd": [645],
-			"_time": [640.29498291015625],
+			"_applyToStart": [641],
+			"_applyToEnd": [646],
+			"_time": [640],
 			"_type": "AnimateTrack",
 			"_data": {
-				"_duration": 4,
+				"_duration": 5,
 				"_track": "progressiveRumble",
 				"_position": "rumble"
 			}
 		},
 		{
-			"_applyToStart": [645],
-			"_applyToEnd": [649],
-			"_time": [645.29498291015625],
+			"_applyToStart": [646],
+			"_applyToEnd": [650],
+			"_time": [645],
 			"_type": "AnimateTrack",
 			"_data": {
-				"_duration": 3,
+				"_duration": 4,
 				"_track": "progressiveRumble2",
 				"_position": "rumble"
 			}
 		},
 		// Woah
 		{
-			"_applyToStart": [600, 598, 608],
-			"_applyToEnd": [601, 599, 609],
-			"_time": [598.29498291015625, 606.29498291015625, 606.544983, 606.794983],
+			"_applyToStart": [601, 609],
+			"_applyToEnd": [602, 610],
+			"_time": [599, 607, 607.25, 607.5],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_track": "woah1Anim",
@@ -1730,9 +1730,9 @@ noodle = {
 			}
 		},
 		{
-			"_applyToStart": [632],
-			"_applyToEnd": [633],
-			"_time": [630.29498291015625],
+			"_applyToStart": [633],
+			"_applyToEnd": [634],
+			"_time": [631],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_track": "woah3Anim",
@@ -1762,10 +1762,11 @@ noodle = {
 				"_duration": 1
 			}
 		},
+		// Track shift
 		{
-			"_applyToStart": [560],
-			"_applyToEnd": [563],
-			"_time": [559.29498291015625],
+			"_applyToStart": [561],
+			"_applyToEnd": [564],
+			"_time": [560],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_track": "trackShift",
@@ -1794,10 +1795,11 @@ noodle = {
 				"_duration": 1
 			}
 		},
+		// Circle Enlarge
 		{
-			"_applyToStart": [564],
-			"_applyToEnd": [567],
-			"_time": [563.29498291015625],
+			"_applyToStart": [565],
+			"_applyToEnd": [568],
+			"_time": [564],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_track": "circleThenEnlarge",
@@ -1812,9 +1814,9 @@ noodle = {
 			}
 		},
 		{
-			"_applyToStart": [564],
-			"_applyToEnd": [567],
-			"_time": [563.59498291015625],
+			"_applyToStart": [565],
+			"_applyToEnd": [568],
+			"_time": [564.5],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_track": "circleThenEnlarge",
@@ -1840,9 +1842,10 @@ noodle = {
 		// 		"_duration": 0.5
 		// 	}
 		// },
+		// Bounce
 		{
-			"_applyToStart": [556],
-			"_applyToEnd": [559],
+			"_applyToStart": [557],
+			"_applyToEnd": [560],
 			"_time": [555],
 			"_type": "AssignPathAnimation",
 			"_data": {
@@ -1850,12 +1853,12 @@ noodle = {
 				"_duration": 1,
 				"_position": "examplePositionPath"
 		  }
-		}
+		},
 	],
 	"_customNotes": [
 		{
-			"_applyToStart": [/*586, */594,/*600,*/ 610/*, */, 626],
-			"_applyToEnd": [/*588, */596,/*601,*/ 612/*, */, 628],
+			"_applyToStart": [/*586, */595,/*600,*/ 611/*, */, 627],
+			"_applyToEnd": [/*588, */597,/*601,*/ 613/*, */, 629],
 			"_data": {
 				"_noteJumpStartBeatOffset": 2
 			}
