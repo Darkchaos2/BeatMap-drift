@@ -8,7 +8,7 @@ function compile(beatMap, custom) {
 
 	// For each event entry in Noodle
 	custom._customEvents.forEach(eventEntry => {
-		// For each event in an entery
+		// Write event and occurances
 		eventEntry._time.forEach(function(time, index) {
 			event = this;
 
@@ -22,7 +22,7 @@ function compile(beatMap, custom) {
 			beatMap._customData._customEvents.push(eventCompiled)
 		}, eventEntry)
 
-
+		// Write which notes this event applies to
 		eventEntry._applyToStart.forEach(function(time, index) {
 			// assign event to notes
 			beatMap._notes.forEach(note => {

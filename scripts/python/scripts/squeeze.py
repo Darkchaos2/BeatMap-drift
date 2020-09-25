@@ -1,6 +1,8 @@
-function squeeze() {
-	console.log("Generating Squeeze");
-	
+def squeeze():
+	import random
+
+	print("Generating Squeze")
+
 	input = [
 		{
 			"_time": 569,
@@ -130,56 +132,50 @@ function squeeze() {
 		}
 	]
 
-	force = 0.75;
-	maxDisp = -0.5;
-	center = [1.5, 1]
-	polling = 25;
 
-	start = 0;
-	startMoveEnd = 0.25;
-	endMoveStart = 0.75;
-	end = 1;
+	force = 0.75
+	maxDisp = -0.5
+	center = [1.5, 1]
+	polling = 25
+
+	start = 0
+	startMoveEnd = 0.25
+	endMoveStart = 0.75
+	end = 1
 
 	output = []
 
-	input.forEach(note => {
-		x = (center[0] - note._lineIndex) * maxDisp;
-		y = (center[1] - note._lineLayer) * maxDisp;
-		// console.log(`[${note._lineIndex}, ${note._lineLayer}]`);
-		// console.log(`[${x}, ${y}]`);
+	for note in input:
+		x = (center[0] - note["_lineLayer"] * maxDisp)
+		y = (center[1] - note["_lineIndex"] * maxDisp)
 
 		rumbleDisp = []
 
-		for(i = 1/polling; i <= 1; i += 1/polling) {
-			localRumble = Math.random(-1, 1) * force;
+		for j in range(0, polling):
+			i = j / polling
+			localRumble = random.randrange(-1, 1) * force
 
-			rumbleDisp.push([(x * localRumble) + x, (y * localRumble) + y, 0, startMoveEnd + i * (endMoveStart - startMoveEnd)])
-		}
+			rumbleDisp.append([(x * localRumble) + x, (y * localRumble) + y, 0, startMoveEnd + i * (endMoveStart - startMoveEnd)])
 
-		output.push({
-			"_applyToStart": [note._time],
-			"_applyToEnd": [note._time + 1],
+		output.append({
+			"_applyToStart": [note["_time"]],
+			"_applyToEnd": [note["_time"] + 1],
 			"_time": [568],
-			"_lineIndex": [note._lineIndex],
-			"_lineLayer": [note._lineLayer],
+			"_lineIndex": [note["_lineIndex"]],
+			"_lineLayer": [note["_lineLayer"]],
 			"_type": "AnimateTrack",
 			"_data": {
 				"_duration": 1,
-				"_track" : `squeeze${note._time}${note._lineIndex}${note._lineLayer}`,
-				// "_noteJumpStartBeatOffset": 2,
+				"_track" : "squeeze{}{}{}".format(note["_time"], note["_lineIndex"], note["_lineLayer"]),
 				"_position": [
 				[0, 0, 0, start],
 				[x, y, 0, startMoveEnd, "easeOutQuart"],
-				...rumbleDisp,
+				*rumbleDisp,
 				[x, y, 0, endMoveStart, "easeOutQuart"],
 				[0, 0, 0, end]
 				]
 			}
 		})
-	})
 
-	console.log("Squeeeeeze compeeeeeete");
-	return output;
-}
-
-exports.squeeze = squeeze
+	print("Squeeze.py completed.py")
+	return output
