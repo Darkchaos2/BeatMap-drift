@@ -1,5 +1,5 @@
 const fs = require('fs');
-var c = require("./compile.js")
+var c = require("./scripts/compile.js")
 var s = require("./scripts/squeeze.js")
 
 var mapTemplate = JSON.parse(fs.readFileSync('EasyStandard.dat', 'utf8'));
