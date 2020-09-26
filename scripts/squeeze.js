@@ -138,7 +138,7 @@ function squeeze() {
 	start = 0;
 	startMoveEnd = 0.25;
 	endMoveStart = 0.75;
-	end = 1;
+	end = 0.9;
 
 	output = []
 

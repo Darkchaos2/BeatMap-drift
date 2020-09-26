@@ -1792,7 +1792,7 @@ noodle = {
 						"easeOutExpo"
 					]
 				],
-				"_duration": 1
+				"_duration": 0.9
 			}
 		},
 		// Circle Enlarge
@@ -1850,7 +1850,7 @@ noodle = {
 			"_type": "AssignPathAnimation",
 			"_data": {
 				"_track": "bounce",
-				"_duration": 1,
+				"_duration": 0.5,
 				"_position": "examplePositionPath"
 		  }
 		},
